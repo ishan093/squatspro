@@ -13,8 +13,6 @@ class Login extends Component {
       username: '',
       password: '',
       signInError: false,
-      showNotificationSnackbar: false,
-      notificationSnackbarText: '',
 
     };
 
@@ -57,20 +55,6 @@ class Login extends Component {
         })
 
 
-  componentWillMount() {
-    if (this.props.location.state) {
-      if (this.props.location.state.message) {
-        this.setState({ showNotificationSnackbar: true, notificationSnackbarText: this.props.location.state.message });
-      }
-    }
-  }
-
-  handleErrorSnackbarRequestClose = () => {
-    this.setState({
-      showNotificationSnackbar: false,
-      notificationSnackbarText: '',
-    });
-  };
 
   render() {
     const { username, password } = this.state;

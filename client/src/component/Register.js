@@ -12,7 +12,6 @@ class Register extends Component {
       username: '',
       password: '',
       email:'',
-      group:'',
       phone:'',
       registerErrorUser: false,
       registerErrorEmail:false,
