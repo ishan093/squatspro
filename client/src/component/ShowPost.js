@@ -49,7 +49,8 @@ export default class DialogExampleModal extends React.Component {
        <h4> {blog.title}</h4>
         </div>
         <div class="card-body">{blog.body}</div> 
-        <div class="card-footer">by {blog.username}</div>
+        <div class="card-footer">by {blog.username}<i>{'   '}posted at {blog.timestamp}</i></div>
+    
       </div>
 
     )
