@@ -115,17 +115,7 @@ class Home extends Component {
            
           iconElementRight={
       <div className="appBarIcons">
-           <SearchBar    
-      onChange={() => console.log('onChange')}
-      onRequestSearch={() => {
-
-        
-      }}
-      style={{
-        margin: '0 auto',
-        float:'left'
-      }}
-    />    
+   
           <Modal  />
           <Link to="/Posts" style={{ textDecoration: 'none' }}><FlatButton style={buttonStyle} label="ShowPosts" /></Link>
           <FlatButton style={buttonStyle} label="Logout" onClick={this.logout.bind()}/>

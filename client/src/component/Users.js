@@ -27,6 +27,7 @@ class Users extends Component {
       showNotificationSnackbar: false,
       notificationSnackbarText: '',
       userArray:[],
+      arr:[],
       search:'',
 
     };
@@ -49,6 +50,7 @@ class Users extends Component {
         .then((response) => {
           console.log(response)
          this.setState({userArray:response});
+         this.setState({arr:response});
         console.log(this.state.userArray)
           
         })
@@ -58,7 +60,10 @@ class Users extends Component {
   }
 
 
- 
+ search=()=>
+ {
+
+ }
 
   renderPerson(person, index) {
     return (
@@ -77,8 +82,36 @@ class Users extends Component {
       margin:10,
       display: 'inline',
     };
+
     return (
       <div>
+     <SearchBar    
+      onChange={(value) =>this.setState({search:value})}
+      onRequestSearch={() => {
+       if(this.state.search=='')
+       {
+         this.setState({userArray:this.state.arr})
+       }
+       else
+       {
+        var search=this.state.search
+        var newarr=  this.state.arr.filter(function(obj) {
+            return obj.username == search;
+          });
+  
+          this.setState({userArray:newarr});
+       }
+     
+       }}
+      style={{
+        left:500,
+        position:'relative',
+        maxWidth: 800,
+        width:500,
+        top:100,
+        margin: '30 auto',
+      }}
+    /> 
      
      <table className="table">
     <thead className="thead-dark">
