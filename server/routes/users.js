@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const passport = require('passport');
 const User = require('../models/User');
+const isauth = require('../Auth/index');
 
 
-
-router.get('/', (req, res) => {
+router.get('/',isauth.isAuthenticated ,(req, res) => {
   
     User.find({}, (err, users) => {
         if (err) {

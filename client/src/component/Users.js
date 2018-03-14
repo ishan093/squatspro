@@ -63,7 +63,7 @@ class Users extends Component {
   renderPerson(person, index) {
     return (
       <tr key={index}>
-        <td>{person.username}</td>
+        <td> <Link to={`/Posts/${person.username}`}>{person.username}</Link></td>
         <td>{person.email}</td>
         <td>{person.phone}</td>
       </tr>

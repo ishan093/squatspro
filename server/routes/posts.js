@@ -38,4 +38,18 @@ router.get('/get',isauth.isAuthenticated, (req, res) => {
      
  });
 
+ router.get('/get/:id',isauth.isAuthenticated, (req, res) => {
+  
+  console.log(req.params.id)
+  Post.find({username:req.params.id},(err, blogs) => {
+    if (err) {
+      console.log(err)
+    }
+   res.json(blogs);
+ 
+  });
+ 
+     
+ });
+
 module.exports = router;
